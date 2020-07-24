@@ -1,0 +1,35 @@
+  <link rel="stylesheet" href="./css/my-styles.css">
+  <script src="./js/my-javascript.js"></script>
+
+<body> 
+  <div>
+    <h1 style="text-align: center"> REGISTRATION FORM </h1>		 
+    <form name="RegForm" action="" onsubmit="return validateForm()" method="post"> 
+      <button onclick="form('red')" >Click me</button>
+      <p>Name: <input type="text" size=65 id="name" name="Name"> </p><br>
+      <input type="text" id="body" placeholder="Body"/>	 
+      <p> Address: <input type="text" size=65 id="address" name="Address"> </p><br> 
+      <p>E-mail Address: <input type="text" size=65 id="email" name="EMail"> </p><br> 
+      <p>Password: <input type="text" size=65 name="Password"> </p><br> 
+      <p>Telephone: <input type="text" size=65 name="Telephone"> </p><br>
+
+      
+      <p>SELECT YOUR GRADE 
+        <select type="text" value="" name="Subject"> 
+        <option>GRADE R</option> 
+        <option>GRADE 1</option> 
+        <option>GRADE 2</option> 
+        <option>GRADE 3</option> 
+        <option>GRADE 4</option>
+        <option>GRADE 5</option>
+        <option>GRADE 6</option>
+        <option>GRADE 7</option>
+        <option>validateForm</option> 
+        </select></p><br><br> 
+        <p>Comments: <textarea cols="55" name="Comment"> </textarea></p> 
+        <p><input type="submit" value="send" name="Submit">	 
+        <input type="reset" value="Reset" name="Reset"> 
+      </p>		 
+    </form> 
+  </div>
+  </body>

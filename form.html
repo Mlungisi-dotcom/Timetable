@@ -1,0 +1,60 @@
+<body>
+    <form id='test-form'>
+        Input1: <input name='Name'><br>
+        Input2: <input name='Surname'><br>
+    <input type='submit'>
+    </form>
+<body>   
+<script>
+    var testForm = document.getElementById('test-form');
+        testForm.onsubmit = function(event) {
+        event.preventDefault();
+
+        var request = new XMLHttpRequest();
+        // POST to httpbin which returns the POST data as JSON
+        request.open('POST', 'https://httpbin.org/post', /* async = */ false);
+
+        var formData = new FormData(document.getElementById('test-form'));
+        request.send(formData);
+
+        console.log(request.response);
+    }
+</script>
+  
+
+
+
+
+
+
+
+
+
+
+<body style="margin:0"></body>
+    <canvas id="canvasElem" width="100" height="80" style="border:1px solid"></canvas>
+  
+    <input type="button" value="Submit" onclick="submit()">
+
+</body>
+
+<script>
+    canvasElem.onmousemove = function(e) {
+      let ctx = canvasElem.getContext('2d');
+      ctx.lineTo(e.clientX, e.clientY);
+      ctx.stroke();
+    };
+
+    async function submit() {
+      let blob = await new Promise(resolve => canvasElem.toBlob(resolve, 'image/png'));
+      let response = await fetch('/article/fetch/post/image', {
+        method: 'POST',
+        body: blob
+      });
+
+      // the server responds with confirmation and the image size
+      let result = await response.json();
+      alert(result.message);
+    }
+
+  </script>
